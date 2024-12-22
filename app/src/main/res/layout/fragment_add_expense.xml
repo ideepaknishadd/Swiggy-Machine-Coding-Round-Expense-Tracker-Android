@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/spacing48">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing8"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
+        android:textSize="@dimen/heading"
+        android:textStyle="bold"
+        android:typeface="sans"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_editor_absoluteX="48dp" />
+
+    <ImageView
+        android:id="@+id/name_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_notes_24"
+        app:layout_constraintBottom_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/description" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing8"
+        android:layout_marginTop="@dimen/spacing20"
+        android:hint="@string/expense_name_hint"
+        android:textSize="@dimen/field"
+        app:layout_constraintBottom_toTopOf="@+id/expense_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/name_icon"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <ImageView
+        android:id="@+id/currency_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_currency_rupee_24"
+        app:layout_constraintBottom_toBottomOf="@id/expense_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/expense_amount" />
+
+    <EditText
+        android:id="@+id/expense_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing8"
+        android:layout_marginTop="@dimen/spacing20"
+        android:hint="@string/expense_amount_hint"
+        android:inputType="numberDecimal"
+        android:textSize="@dimen/field"
+        app:layout_constraintBottom_toTopOf="@+id/expense_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/currency_icon"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
+
+    <ImageView
+        android:id="@+id/categories_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_category_24"
+        app:layout_constraintBottom_toBottomOf="@id/expense_category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/expense_category" />
+
+    <Spinner
+        android:id="@+id/expense_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing8"
+        android:layout_marginTop="@dimen/spacing20"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@+id/add_edit_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/categories_icon"
+        app:layout_constraintTop_toBottomOf="@+id/expense_amount" />
+
+    <Button
+        android:id="@+id/add_edit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing20"
+        android:layout_marginBottom="@dimen/spacing20"
+        android:backgroundTint="@color/primary_dark"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/expense_category" />
+</androidx.constraintlayout.widget.ConstraintLayout>

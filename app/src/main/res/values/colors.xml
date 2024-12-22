@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_light">#21CC5C</color>
+    <color name="primary">#1ba94c</color>
+    <color name="lime500">#2C79BA10</color>
+    <color name="primary_dark">#147d38</color>
+    <color name="secondary">#097bbf</color>
+    <color name="secondary_dark">#075c8e</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

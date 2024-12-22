@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="no_expenses_copy">There are no expenses to view at the moment. \nAdd a new expense from the + icon below</string>
+    <string name="add_expense_title">Add Expense</string>
+    <string name="edit_expense_title">Edit Expense</string>
+    <string name="edit_expense_button"><u>Edit</u></string>
+    <string name="expense_name_hint">Description</string>
+    <string name="expense_amount_hint">Amount</string>
+    <string name="expense_splitter_hint">Splitter</string>
+    <string name="add_expense_cta">ADD</string>
+    <string name="save_expense_cta">SAVE</string>
+    <string name="titled_description">%1$s</string>
+    <string name="titled_amount">Amount: ₹%1$s</string>
+    <string name="titled_category">Category: %1$s</string>
+
+    <string-array name="categories">
+        <item>Food</item>
+        <item>Travel</item>
+        <item>Wellness</item>
+        <item>Others</item>
+    </string-array>
+
+</resources>

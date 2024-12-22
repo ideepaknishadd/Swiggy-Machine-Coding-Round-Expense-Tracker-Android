@@ -1,0 +1,2 @@
+rootProject.name = "Swiggy-Machine-Coding-Round-Expense-Tracker-Android"
+include ':app'
