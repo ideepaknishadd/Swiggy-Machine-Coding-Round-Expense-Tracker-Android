@@ -1,54 +1,148 @@
-# HackerRank Kotlin Android
+# HackerRank Kotlin Android - Swiggy SDE-1 Challenge
 
-# Swiggy - Android Machine Coding Questions for SDE-1 Role
+<div align="center">
+  <img src="screenshots/app/Swiggy_Icon.png" alt="Swiggy Logo" width="200" />
+  <img src="screenshots/app/HackerRank_Icon.png" alt="HackerRank Logo" width="200" />
+</div>
 
-## Q1: Expense Tracker Application - Expense List Screen
+## 📱 Overview
 
-### Task Description
-Develop UI for the Expense list screen in an Expense Tracker application.
+This repository contains my implementation of an Expense Tracker Android application developed as part of Swiggy's Android Machine Coding interview challenge for an SDE-1 role, hosted on HackerRank. The application allows users to track and manage their expenses with features for adding, editing, and viewing expense records.
 
-### Key Features
-The Expense list screen comprises:
-1. A list of expense items.
-2. A floating action button to add a new expense.
-3. Each expense item includes:
-   - **Description**
-   - **Amount**
-   - **Category**
-   - A button to edit the expense.
+> **Note:** This repository demonstrates my solution to a code-fixing challenge. Swiggy provided a partially implemented project, and the task was to identify and fix specific issues in the codebase according to requirements.
 
-### Implementation Details
+## 📸 App Screenshots
 
-#### **ExpenseListFragment.kt**
-1. **Observe Data**:
-   - Complete the `observeData()` method to consume the `updateView` LiveData value.
-   - Display the UI based on the properties of `ExpenseListStateEvent.UpdateExpenses`.
+<div align="center">
+  <img src="screenshots/app/dashboard_data.png" alt="Dashboard (With Data)" width="250" />
+  <img src="screenshots/app/dashboard_no_data.png" alt="Dashboard (Empty State)" width="250" /> 
+  <img src="screenshots/app/add.png" alt="Add Expense" width="250" />
+  <img src="screenshots/app/edit.png" alt="Edit Expense" width="250" />
+</div>
 
-     Properties:
-      - **`showList`**: A boolean to determine whether to display the expenses (RecyclerView) and hide the `noExpenses` TextView.
-      - **`list`**: A list to be submitted to the `expensesAdapter`.
+## 📋 Challenge Description
 
-2. **Fix Setup Listeners**:
-   - Update the `setupListeners()` method to display the Add Expense version of `AddEditExpenseFragment`. This can be inferred from the code in `AddEditExpenseFragment`.
+This challenge was part of Swiggy's technical interview process for Android developers, administered through HackerRank's platform.
 
-#### **ExpensesViewModel.kt**
-1. **Update View**:
-   - Implement the `updateView()` method to publish values to the `updateView` LiveData based on the following conditions:
-      - **`showList`**: Set to `true` if the list passed to the method is not empty, otherwise `false`.
-      - **`list`**: Pass a copy of the list to ensure `adapter.submitList` triggers a view update in the adapter.
+### Task
+The challenge required fixing and implementing the Expense list screen in a partially completed Expense Tracker application. The focus was on proper UI implementation, state management, and data handling.
 
-2. **Add Expense**:
-   - Implement the `addExpense()` method to add an expense to the list inside the `addedExpenses` LiveData.
-   - Republish the updated list.
+### Key Features Implemented
+1. A functional list of expense items with proper state handling
+2. Add new expense functionality via floating action button
+3. Edit existing expense capability
+4. Each expense item displays:
+    - Description
+    - Amount
+    - Category
+    - Edit button
 
-3. **Edit Expense**:
-   - Implement the `editExpense()` method to update an expense in the `addedExpenses` LiveData.
-   - Republish the updated list.
+## 🛠️ Problems and Solutions
 
-#### **ExpensesAdapter.kt**
-1. **Update DiffUtil Logic**:
-   - Update the `DiffUtil` logic of the adapter to ensure accurate updates in the RecyclerView when any items are changed.
+The challenge provided a codebase with several non-functional components. Here's how I approached solving the key issues:
+
+### ExpenseListFragment.kt
+
+**Problems:**
+- Incomplete `observeData()` method missing the LiveData consumption logic
+- Missing UI state handling based on `ExpenseListStateEvent.UpdateExpenses` properties
+- Incomplete `setupListeners()` method for navigating to Add Expense screen
+
+**Solutions:**
+- Implemented proper LiveData observation in `observeData()` to respond to state changes
+- Added conditional UI logic to show/hide expense list based on data availability
+- Fixed navigation to Add Expense screen through the `AddEditExpenseFragment`
+
+### ExpensesViewModel.kt
+
+**Problems:**
+- Incomplete `updateView()` method lacking logic for UI state updates
+- Missing implementation for `addExpense()` to handle adding new expenses
+- Missing implementation for `editExpense()` to update existing expenses
+
+**Solutions:**
+- Implemented `updateView()` with proper state management:
+    - Set `showList` flag based on list emptiness
+    - Provided immutable list copy to ensure adapter triggers proper updates
+- Added expense creation logic in `addExpense()` with LiveData publishing
+- Implemented expense editing logic in `editExpense()` with proper state updates
+
+### ExpensesAdapter.kt
+
+**Problems:**
+- Inefficient DiffUtil implementation causing issues with list updates
+- Suboptimal item comparison logic
+
+**Solutions:**
+- Optimized DiffUtil implementation for efficient list diffing
+- Enhanced item comparison logic to properly detect changes in expense objects
+- Improved adapter efficiency for smoother list rendering
+
+## 🧠 Technical Approach
+
+My approach to solving this challenge:
+
+1. **Analysis Phase**
+    - Thoroughly examined the codebase to identify all incomplete implementations
+    - Understood the data flow and architecture of the application
+    - Created a roadmap of issues to address in priority order
+
+2. **Implementation Strategy**
+    - Maintained the existing MVVM architecture
+    - Used LiveData for reactive UI updates
+    - Followed Kotlin best practices
+    - Ensured efficient list rendering
+    - Handled UI state transitions properly
+
+3. **Testing**
+    - Verified each feature worked as expected
+    - Tested edge cases (empty lists, data changes)
+    - Ensured smooth UI transitions
+
+## 💯 Code Quality Focus
+
+Throughout my implementation, I maintained a focus on code quality through:
+
+1. **Clean Code Practices**
+    - Meaningful variable and function names
+    - Single Responsibility Principle
+    - Proper error handling
+
+2. **Kotlin Best Practices**
+    - Null safety with proper nullable type handling
+    - Extension functions where appropriate
+    - Idiomatic collection operations
+
+3. **Efficient UI Updates**
+    - Minimizing unnecessary redraws
+    - Optimized DiffUtil implementation
+    - Proper state management
+
+4. **Architecture Adherence**
+    - Maintaining clear separation of concerns (MVVM)
+    - Unidirectional data flow
+    - Proper LiveData usage
+
+## 🚀 Technologies Used
+
+- **Kotlin** - Primary programming language
+- **MVVM Architecture** - For clean separation of concerns
+- **LiveData** - For reactive UI updates
+- **RecyclerView & DiffUtil** - For efficient list rendering
+- **Material Design Components** - For modern UI elements
+
+## 🧪 Additional Resources
+
+The repository includes:
+
+1. **MCQ Assessment**: Multiple-choice questions related to Android development concepts are available in the assets folder. These were part of the theoretical assessment component of the Swiggy interview process.
+
+2. **Original Challenge Requirements**: The complete problem statement and requirements as provided in the HackerRank challenge.
+
+## 📝 License
+
+This project is available for educational purposes.
 
 ---
 
-## MCQ's is in assets folder
+*This repository showcases my solution to Swiggy's Android Machine Coding challenge administered through HackerRank, demonstrating my problem-solving approach and Android development best practices.*
