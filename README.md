@@ -1,8 +1,8 @@
 # HackerRank Kotlin Android - Swiggy SDE-1 Challenge
 
 <div align="center">
-  <img src="screenshots/app/HackerRank_Icon.png" alt="HackerRank Logo" width="200" />
-  <img src="screenshots/app/Swiggy_Icon.png" alt="Swiggy Logo" width="200" />
+  <img src="screenshots/app/HackerRank_Icon.png" alt="HackerRank Logo" width="140" />
+  <img src="screenshots/app/Swiggy_Icon.png" alt="Swiggy Logo" width="140" />
 </div>
 
 ## 📱 Overview
