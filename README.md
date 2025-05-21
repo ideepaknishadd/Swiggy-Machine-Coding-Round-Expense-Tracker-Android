@@ -1,8 +1,8 @@
 # HackerRank Kotlin Android - Swiggy SDE-1 Challenge
 
 <div align="center">
-  <img src="screenshots/app/Swiggy_Icon.png" alt="Swiggy Logo" width="200" />
   <img src="screenshots/app/HackerRank_Icon.png" alt="HackerRank Logo" width="200" />
+  <img src="screenshots/app/Swiggy_Icon.png" alt="Swiggy Logo" width="200" />
 </div>
 
 ## 📱 Overview
@@ -14,9 +14,9 @@ This repository contains my implementation of an Expense Tracker Android applica
 ## 📸 App Screenshots
 
 <div align="center">
-  <img src="screenshots/app/dashboard_data.png" alt="Dashboard (With Data)" width="250" />
   <img src="screenshots/app/dashboard_no_data.png" alt="Dashboard (Empty State)" width="250" /> 
   <img src="screenshots/app/add.png" alt="Add Expense" width="250" />
+  <img src="screenshots/app/dashboard_data.png" alt="Dashboard (With Data)" width="250" />
   <img src="screenshots/app/edit.png" alt="Edit Expense" width="250" />
 </div>
 
